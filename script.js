@@ -5,6 +5,25 @@ const rightBtn = document.getElementById('right');
 
 let activeSlide = 0;
 
+rightBtn.addEventListener('click', () => {
+    activeSlide++
+
+    if (activeSlide === slides.length) {
+        activeSlide = 0
+    }
+    setBgTobody()
+    setActiveSlide()
+})
+
+leftBtn.addEventListener('click', () => {
+    activeSlide--
+    if (activeSlide === 0) {
+        activeSlide = slides.length
+    }
+    setBgTobody()
+    setActiveSlide()
+})
+
 
 const setBgTobody = () => {
     body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
